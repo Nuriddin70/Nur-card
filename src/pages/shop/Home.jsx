@@ -1,21 +1,20 @@
 import PRODUCTS from '../../products.jsx'
-
+import Product from './Product.jsx';
+import "./shop.css"
 function Home() {
   return (
     <div className="shop">
       <div className="shopTitle">
         <h1>NurTech Shop</h1>
       </div>
+      <div className="container">
       <div className="products">
         {PRODUCTS.map((product)=>(
-          <div key={product.id}>
-            <img src={product.productImage} alt="/" />
-            <p >{product.productName}</p>
-            <span>{product.price}</span>
-          </div>
-          
+          <Product key={product.id} data={product}/>
         ))}
       </div>
+      </div>
+      
     </div>
   );
 }
